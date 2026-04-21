@@ -24,8 +24,7 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
 @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
 .login-card{background:rgba(24,24,28,.9);backdrop-filter:blur(20px);border:1px solid #2a2a2e;border-radius:24px;width:100%;max-width:420px;padding:40px 32px;position:relative;z-index:1}
 .login-input{width:100%;background:#111114;border:1px solid #2a2a2e;border-radius:12px;padding:12px 16px;padding-left:44px;color:#f0f0f0;font-size:14px;font-family:'Poppins';transition:border .2s;outline:none}
-.login-input:focus{border-color:#e63946}
-.login-input::placeholder{color:#555}
+.login-input:focus{border-color:#e63946}.login-input::placeholder{color:#555}
 .sidebar{width:260px;min-height:100vh;background:#111114;border-right:1px solid #2a2a2e;position:fixed;left:0;top:0;z-index:100;transition:transform .3s;display:flex;flex-direction:column}
 .main-content{margin-left:260px;min-height:100vh;transition:margin .3s}
 .sidebar-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90;opacity:0;visibility:hidden;transition:all .3s}
@@ -62,7 +61,6 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
 .stock-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
 .stock-high{background:#2ecc71}.stock-low{background:#f39c12}.stock-critical{background:#e63946;animation:pulse-dot 1.5s infinite}
 @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
-.star{color:#f4a261;font-size:11px}.star.empty{color:#333}
 .toast-container{position:fixed;top:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
 .toast{padding:14px 18px;border-radius:12px;background:#18181c;border:1px solid #2a2a2e;box-shadow:0 10px 40px rgba(0,0,0,.5);display:flex;align-items:center;gap:10px;animation:toast-in .35s ease,toast-out .35s ease 2.5s forwards;min-width:260px;font-size:13px;pointer-events:auto}
 @keyframes toast-in{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
@@ -87,11 +85,9 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
 .filter-btn.on{background:#e63946;border-color:#e63946;color:#fff}
 .data-table{width:100%;border-collapse:separate;border-spacing:0}
 .data-table th{text-align:left;padding:12px 16px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#777;background:#111114;border-bottom:1px solid #2a2a2e}
-.data-table th:first-child{border-radius:10px 0 0 0}
-.data-table th:last-child{border-radius:0 10px 0 0}
+.data-table th:first-child{border-radius:10px 0 0 0}.data-table th:last-child{border-radius:0 10px 0 0}
 .data-table td{padding:14px 16px;font-size:13px;border-bottom:1px solid #1a1a1e;color:#ccc}
-.data-table tbody tr{transition:background .15s}
-.data-table tbody tr:hover{background:rgba(230,57,70,.03)}
+.data-table tbody tr{transition:background .15s}.data-table tbody tr:hover{background:rgba(230,57,70,.03)}
 .role-tag{font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
 .role-admin{background:rgba(230,57,70,.15);color:#e63946}
 .role-staff{background:rgba(52,152,219,.15);color:#3498db}
@@ -107,27 +103,19 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
 
 <div class="toast-container" id="toastContainer"></div>
 
-<!-- LOGIN PAGE -->
+<!-- LOGIN -->
 <div id="loginPage" class="login-page">
   <div class="login-bg"></div>
   <div class="login-float"></div><div class="login-float"></div><div class="login-float"></div>
   <div class="login-card">
     <div class="text-center mb-8">
-      <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-accent/20">
-        <i class="fas fa-dumbbell text-white text-2xl"></i>
-      </div>
+      <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-accent/20"><i class="fas fa-dumbbell text-white text-2xl"></i></div>
       <h1 class="font-heading text-3xl text-white tracking-wider">EVOFIT STORE</h1>
       <p class="text-muted text-sm mt-1">Masuk untuk melanjutkan</p>
     </div>
     <form id="loginForm" class="mb-6">
-      <div class="mb-3 relative">
-        <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-muted text-sm"></i>
-        <input type="text" id="loginUser" class="login-input" placeholder="Username" required autocomplete="username">
-      </div>
-      <div class="mb-4 relative">
-        <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-muted text-sm"></i>
-        <input type="password" id="loginPass" class="login-input" placeholder="Password" required autocomplete="current-password">
-      </div>
+      <div class="mb-3 relative"><i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-muted text-sm"></i><input type="text" id="loginUser" class="login-input" placeholder="Username" required autocomplete="username"></div>
+      <div class="mb-4 relative"><i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-muted text-sm"></i><input type="password" id="loginPass" class="login-input" placeholder="Password" required autocomplete="current-password"></div>
       <button type="submit" class="btn btn-primary" style="width:100%;padding:13px"><i class="fas fa-sign-in-alt"></i> Masuk</button>
       <p id="loginError" class="text-accent text-xs text-center mt-3" style="display:none"></p>
     </form>
@@ -144,36 +132,16 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
   <button type="button" class="mobile-toggle" id="btnMobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
   <aside class="sidebar" id="sidebar">
-    <div class="p-5 border-b border-border">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-dumbbell text-white text-lg"></i></div>
-        <div><span class="font-heading text-xl text-white tracking-wider">EVOFIT</span><p class="text-muted text-[10px] -mt-0.5" id="sidebarRole">Admin Panel</p></div>
-      </div>
-    </div>
+    <div class="p-5 border-b border-border"><div class="flex items-center gap-3"><div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-dumbbell text-white text-lg"></i></div><div><span class="font-heading text-xl text-white tracking-wider">EVOFIT</span><p class="text-muted text-[10px] -mt-0.5" id="sidebarRole">Admin Panel</p></div></div></div>
     <nav class="flex-1 py-4 overflow-y-auto" id="sidebarNav"></nav>
-    <div class="p-4 border-t border-border">
-      <div class="flex items-center gap-3 p-2">
-        <div class="w-9 h-9 rounded-full flex items-center justify-center shrink-0" id="sidebarAvatar" style="background:rgba(230,57,70,.2)"><i class="fas fa-user text-accent text-sm"></i></div>
-        <div class="flex-1 min-w-0"><p class="text-sm font-semibold text-white truncate" id="sidebarName">Admin</p><p class="text-[10px] text-muted truncate" id="sidebarEmail">admin@evofit.store</p></div>
-        <button type="button" id="btnLogout" class="text-muted hover:text-accent transition" title="Keluar" aria-label="Logout"><i class="fas fa-sign-out-alt text-sm"></i></button>
-      </div>
-    </div>
+    <div class="p-4 border-t border-border"><div class="flex items-center gap-3 p-2"><div class="w-9 h-9 rounded-full flex items-center justify-center shrink-0" id="sidebarAvatar" style="background:rgba(230,57,70,.2)"><i class="fas fa-user text-accent text-sm"></i></div><div class="flex-1 min-w-0"><p class="text-sm font-semibold text-white truncate" id="sidebarName">Admin</p><p class="text-[10px] text-muted truncate" id="sidebarEmail">admin@evofit.store</p></div><button type="button" id="btnLogout" class="text-muted hover:text-accent transition" title="Keluar" aria-label="Logout"><i class="fas fa-sign-out-alt text-sm"></i></button></div></div>
   </aside>
   <main class="main-content" id="mainContent">
     <header class="sticky top-0 z-50 bg-bg/80 backdrop-blur-xl border-b border-border px-6 py-4 flex items-center justify-between gap-4">
-      <div>
-        <h1 class="font-heading text-2xl text-white tracking-wide" id="pageTitle">DASHBOARD</h1>
-        <p class="text-muted text-xs mt-0.5" id="pageSubtitle">Ringkasan toko dan aktivitas terbaru</p>
-      </div>
+      <div><h1 class="font-heading text-2xl text-white tracking-wide" id="pageTitle">DASHBOARD</h1><p class="text-muted text-xs mt-0.5" id="pageSubtitle">Ringkasan toko dan aktivitas terbaru</p></div>
       <div class="flex items-center gap-3">
-        <div class="relative hidden md:block" id="searchWrap">
-          <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-muted text-xs"></i>
-          <input type="text" id="globalSearch" placeholder="Cari produk..." class="bg-surface border border-border rounded-xl py-2 pl-9 pr-4 text-sm text-txt placeholder-muted focus:outline-none focus:border-accent transition w-56">
-        </div>
-        <button type="button" id="btnHeaderCart" class="relative w-10 h-10 rounded-xl bg-surface border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition" aria-label="Keranjang">
-          <i class="fas fa-shopping-bag text-sm"></i>
-          <span id="headerCartBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center" style="display:none">0</span>
-        </button>
+        <div class="relative hidden md:block" id="searchWrap"><i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-muted text-xs"></i><input type="text" id="globalSearch" placeholder="Cari produk..." class="bg-surface border border-border rounded-xl py-2 pl-9 pr-4 text-sm text-txt placeholder-muted focus:outline-none focus:border-accent transition w-56"></div>
+        <button type="button" id="btnHeaderCart" class="relative w-10 h-10 rounded-xl bg-surface border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition" aria-label="Keranjang"><i class="fas fa-shopping-bag text-sm"></i><span id="headerCartBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center" style="display:none">0</span></button>
       </div>
     </header>
     <div class="p-6" id="pageContent"></div>
@@ -181,22 +149,13 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
   <div class="modal-overlay" id="modalOverlay"><div class="modal-box" id="modalBox"></div></div>
 </div>
 
-<!-- CUSTOMER SHOP -->
+<!-- SHOP -->
 <div id="shopPage" style="display:none">
   <header class="shop-header px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3"><div class="w-9 h-9 bg-accent rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-dumbbell text-white text-sm"></i></div><span class="font-heading text-xl text-white tracking-wider">EVOFIT</span></div>
     <div class="flex items-center gap-3">
-      <div class="w-9 h-9 bg-accent rounded-xl flex items-center justify-center shrink-0"><i class="fas fa-dumbbell text-white text-sm"></i></div>
-      <span class="font-heading text-xl text-white tracking-wider">EVOFIT</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <div class="relative hidden sm:block">
-        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-muted text-xs"></i>
-        <input type="text" id="shopSearch" placeholder="Cari produk..." class="bg-surface border border-border rounded-xl py-2 pl-9 pr-4 text-sm text-txt placeholder-muted focus:outline-none focus:border-accent transition w-52">
-      </div>
-      <button type="button" id="btnShopCart" class="relative w-10 h-10 rounded-xl bg-surface border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition" aria-label="Keranjang">
-        <i class="fas fa-shopping-bag text-sm"></i>
-        <span id="shopCartBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center" style="display:none">0</span>
-      </button>
+      <div class="relative hidden sm:block"><i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-muted text-xs"></i><input type="text" id="shopSearch" placeholder="Cari produk..." class="bg-surface border border-border rounded-xl py-2 pl-9 pr-4 text-sm text-txt placeholder-muted focus:outline-none focus:border-accent transition w-52"></div>
+      <button type="button" id="btnShopCart" class="relative w-10 h-10 rounded-xl bg-surface border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition" aria-label="Keranjang"><i class="fas fa-shopping-bag text-sm"></i><span id="shopCartBadge" class="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center" style="display:none">0</span></button>
       <button type="button" id="btnShopLogin" class="btn btn-ghost" style="padding:8px 14px;font-size:11px"><i class="fas fa-sign-in-alt"></i><span class="hidden sm:inline"> Login</span></button>
     </div>
   </header>
@@ -204,16 +163,15 @@ body{font-family:'Poppins',sans-serif;background:#08080a;color:#f0f0f0;overflow-
 </div>
 
 <script>
-/* ===================== DATA ===================== */
-var accounts=[
+/* ===== DATA BAWAAN (FACTORY DEFAULT) ===== */
+var DEFAULT_ACCOUNTS=[
   {id:1,user:'admin',pass:'admin123',name:'Admin Utama',email:'admin@evofit.store',role:'admin',avatar:'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face',avatarBg:'rgba(230,57,70,.2)',avatarColor:'#e63946'},
   {id:2,user:'staff',pass:'staff123',name:'Rina Staff',email:'rina@evofit.store',role:'staff',avatar:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face',avatarBg:'rgba(52,152,219,.2)',avatarColor:'#3498db'},
   {id:3,user:'rizky',pass:'rizky123',name:'Rizky Pratama',email:'rizky@gmail.com',role:'customer',avatar:'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=80&h=80&fit=crop&crop=face',avatarBg:'rgba(46,204,113,.2)',avatarColor:'#2ecc71'},
   {id:4,user:'sarah',pass:'sarah123',name:'Sarah Amelia',email:'sarah@gmail.com',role:'customer',avatar:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face',avatarBg:'rgba(244,162,97,.2)',avatarColor:'#f4a261'},
   {id:5,user:'dimas',pass:'dimas123',name:'Dimas Arya',email:'dimas@gmail.com',role:'customer',avatar:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face',avatarBg:'rgba(155,89,182,.2)',avatarColor:'#9b59b6'}
 ];
-
-var products=[
+var DEFAULT_PRODUCTS=[
   {id:1,name:"EVOWHEY Protein 50s",category:"protein",price:3300,originalPrice:3800,badge:"BEST SELLER",badgeBg:"#e63946",accentColor:"#e63946",rating:4.8,reviews:234,stock:15,desc:"Whey protein premium 50 sachet.",nutrition:"25g Protein | 5g BCAA | 120 Cal",img:"https://images.unsplash.com/photo-1593095948071-474c5cc2c4d8?w=400&h=400&fit=crop"},
   {id:2,name:"EVOWHEY Sachet 12",category:"protein",price:1300,originalPrice:1450,badge:"-10%",badgeBg:"#f4a261",accentColor:"#f4a261",rating:4.7,reviews:189,stock:28,desc:"Paket hemat EVOWHEY 12 sachet.",nutrition:"25g Protein | 5g BCAA",img:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop"},
   {id:3,name:"ISOLINE Bundling Cutting",category:"protein",price:3600,originalPrice:4200,badge:"CUTTING",badgeBg:"#2ecc71",accentColor:"#2ecc71",rating:4.9,reviews:156,stock:8,desc:"Whey isolate murni untuk fase cutting.",nutrition:"27g Protein | 0g Sugar",img:"https://images.unsplash.com/photo-1593095948071-474c5cc2c4d8?w=400&h=400&fit=crop"},
@@ -230,175 +188,176 @@ var products=[
   {id:14,name:"Shaker EvoFit 700ml",category:"aksesoris",price:350,originalPrice:450,badge:"NEW",badgeBg:"#2ecc71",accentColor:"#2ecc71",rating:4.6,reviews:42,stock:50,desc:"Shaker premium 700ml + mixer ball.",nutrition:null,img:"https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop"}
 ];
 
-/* ===================== STATE ===================== */
+/* ===== STORAGE KEYS ===== */
+var DATA_KEY='evofit_data';
+var SESSION_KEY='evofit_session';
+
+/* ===== STATE ===== */
+var accounts=JSON.parse(JSON.stringify(DEFAULT_ACCOUNTS));
+var products=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
 var cart=[];
-var currentPage='dashboard';
 var nextId=15;
+var currentPage='dashboard';
 var pFilter='all';
 var pSort='default';
-var currentUser=null;
 var shopSubPage='products';
 var shopFilter='all';
+var currentUser=null;
 
-/* ===================== DETEKSI KONTEKS ===================== */
-function isSrcdoc(){
+/* ===== SAVE DATA (produk, akun, keranjang, nextId) ===== */
+function saveData(){
   try{
-    var o=window.location.origin;
-    return !o||o==='null'||o==='undefined';
-  }catch(e){return true}
-}
-function getShopUrl(){
-  try{
-    var o=window.location.origin;
-    var p=window.location.pathname;
-    if(!o||o==='null'||o==='undefined')return '#shop';
-    return o+p+'#shop';
-  }catch(e){return '#shop'}
+    localStorage.setItem(DATA_KEY,JSON.stringify({
+      products:products,
+      accounts:accounts,
+      cart:cart,
+      nextId:nextId
+    }));
+  }catch(e){}
 }
 
-/* ===================== UTILITAS ===================== */
+/* ===== LOAD DATA ===== */
+function loadData(){
+  try{
+    var raw=localStorage.getItem(DATA_KEY);
+    if(!raw)return false;
+    var d=JSON.parse(raw);
+    if(d.products&&Array.isArray(d.products))products=d.products;
+    if(d.accounts&&Array.isArray(d.accounts))accounts=d.accounts;
+    if(d.cart&&Array.isArray(d.cart))cart=d.cart;
+    if(typeof d.nextId==='number')nextId=d.nextId;
+    return true;
+  }catch(e){return false}
+}
+
+/* ===== VALIDASI KERANJANG (hapus item yang produknya sudah dihapus) ===== */
+function validateCart(){
+  var ids={};
+  for(var i=0;i<products.length;i++)ids[products[i].id]=true;
+  var valid=[];
+  for(var j=0;j<cart.length;j++){
+    if(ids[cart[j].id]){
+      var p=null;
+      for(var k=0;k<products.length;k++){if(products[k].id===cart[j].id){p=products[k];break}}
+      if(p)cart[j].max=p.stock;
+      valid.push(cart[j]);
+    }
+  }
+  cart=valid;
+}
+
+/* ===== SAVE SESSION (user aktif + halaman + filter) ===== */
+function saveSession(){
+  try{
+    if(!currentUser||currentUser.role==='guest'){localStorage.removeItem(SESSION_KEY);return}
+    localStorage.setItem(SESSION_KEY,JSON.stringify({
+      userId:currentUser.id,
+      page:currentPage,
+      pFilter:pFilter,
+      pSort:pSort,
+      shopSubPage:shopSubPage,
+      shopFilter:shopFilter
+    }));
+  }catch(e){}
+}
+
+/* ===== LOAD SESSION ===== */
+function loadSession(){
+  try{
+    var raw=localStorage.getItem(SESSION_KEY);
+    if(!raw)return null;
+    return JSON.parse(raw);
+  }catch(e){return null}
+}
+
+/* ===== HAPUS SESSION ===== */
+function clearSession(){
+  try{localStorage.removeItem(SESSION_KEY)}catch(e){}
+}
+
+/* ===== RESET SEMUA DATA KE DEFAULT ===== */
+function resetAllData(){
+  products=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  accounts=JSON.parse(JSON.stringify(DEFAULT_ACCOUNTS));
+  cart=[];
+  nextId=15;
+  try{localStorage.removeItem(DATA_KEY);localStorage.removeItem(SESSION_KEY)}catch(e){}
+  toast('Data berhasil direset ke default!','fa-undo','#2ecc71');
+  render();
+}
+
+/* ===== INIT: MUAT DATA DARI STORAGE ===== */
+loadData();
+validateCart();
+(function calcNextId(){var m=0;for(var i=0;i<products.length;i++){if(products[i].id>m)m=products[i].id}nextId=m+1})();
+
+/* ===== UTILITAS ===== */
+function isSrcdoc(){try{var o=window.location.origin;return !o||o==='null'||o==='undefined'}catch(e){return true}}
+function getShopUrl(){try{var o=window.location.origin,p=window.location.pathname;if(!o||o==='null'||o==='undefined')return '#shop';return o+p+'#shop'}catch(e){return '#shop'}}
 function fmt(n){return '\u0E3F'+n.toLocaleString()}
 function sClass(s){return s<=5?'stock-critical':s<=15?'stock-low':'stock-high'}
 function sLabel(s){return s<=5?'Stok kritis!':s<=15?'Stok terbatas':'Tersedia'}
 
-/* Salin teks — fallback lengkap */
 function copyText(text){
-  /* Coba Clipboard API modern */
-  if(navigator.clipboard&&window.isSecureContext){
-    navigator.clipboard.writeText(text).then(function(){
-      toast('Link berhasil disalin!','fa-link','#2ecc71');
-    }).catch(function(){fallbackCopy(text)});
-  }else{
-    fallbackCopy(text);
-  }
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){toast('Link berhasil disalin!','fa-link','#2ecc71')}).catch(function(){fallbackCopy(text)})}
+  else{fallbackCopy(text)}
 }
 function fallbackCopy(text){
-  try{
-    var ta=document.createElement('textarea');
-    ta.value=text;
-    ta.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';
-    document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    var ok=document.execCommand('copy');
-    document.body.removeChild(ta);
-    if(ok)toast('Link berhasil disalin!','fa-link','#2ecc71');
-    else toast('Gagal menyalin, silakan salin manual: '+text,'fa-exclamation-circle','#f4a261');
-  }catch(e){
-    toast('Gagal menyalin link','fa-exclamation-circle','#e63946');
-  }
+  try{var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand('copy');document.body.removeChild(ta);if(ok)toast('Link berhasil disalin!','fa-link','#2ecc71');else toast('Gagal menyalin','fa-exclamation-circle','#f4a261')}catch(e){toast('Gagal menyalin link','fa-exclamation-circle','#e63946')}
+}
+function toast(msg,icon,color){var c=document.getElementById('toastContainer'),t=document.createElement('div');t.className='toast';t.innerHTML='<i class="fas '+icon+'" style="color:'+color+';font-size:16px"></i><span>'+msg+'</span>';c.appendChild(t);setTimeout(function(){if(t.parentNode)t.parentNode.removeChild(t)},3200)}
+function openModal(html){document.getElementById('modalBox').innerHTML=html;document.getElementById('modalOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
+function updateBadges(){var q=cart.reduce(function(s,c){return s+c.qty},0);['headerCartBadge','shopCartBadge','sidebarCartBadge'].forEach(function(id){var el=document.getElementById(id);if(el){el.textContent=q;el.style.display=q?'flex':'none'}})}
+
+function renderLinkBox(containerId,showCopy){
+  var box=document.getElementById(containerId);if(!box)return;var url=getShopUrl();
+  if(isSrcdoc())box.innerHTML='<div class="flex items-center gap-2 bg-surface rounded-lg p-2.5"><i class="fas fa-info-circle text-gold text-xs shrink-0"></i><p class="text-[11px] text-muted text-left">Link toko hanya tersedia saat dibuka langsung di browser.</p></div>';
+  else box.innerHTML='<div class="flex items-center gap-2 bg-surface rounded-lg p-2.5"><i class="fas fa-link text-accent text-xs shrink-0"></i><input type="text" value="'+url+'" readonly class="bg-transparent border-none text-xs text-muted flex-1 outline-none" style="min-width:0">'+(showCopy?'<button type="button" data-copylink class="text-xs text-accent hover:underline font-semibold shrink-0">Salin</button>':'')+'</div>';
 }
 
-function toast(msg,icon,color){
-  var c=document.getElementById('toastContainer');
-  var t=document.createElement('div');
-  t.className='toast';
-  t.innerHTML='<i class="fas '+icon+'" style="color:'+color+';font-size:16px"></i><span>'+msg+'</span>';
-  c.appendChild(t);
-  setTimeout(function(){if(t.parentNode)t.parentNode.removeChild(t)},3200);
-}
-
-function openModal(html){
-  document.getElementById('modalBox').innerHTML=html;
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeModal(){
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-
-function updateBadges(){
-  var q=cart.reduce(function(s,c){return s+c.qty},0);
-  ['headerCartBadge','shopCartBadge','sidebarCartBadge'].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el){el.textContent=q;el.style.display=q?'flex':'none'}
-  });
-}
-
-/* ===================== RENDER LINK BOX (login & dashboard) ===================== */
-function renderLinkBox(containerId,showCopyBtn){
-  var box=document.getElementById(containerId);
-  if(!box)return;
-  var url=getShopUrl();
-  if(isSrcdoc()){
-    /* Di dalam iframe/srcdoc: tampilkan info tanpa link URL */
-    box.innerHTML='<div class="flex items-center gap-2 bg-surface rounded-lg p-2.5">'+
-      '<i class="fas fa-info-circle text-gold text-xs shrink-0"></i>'+
-      '<p class="text-[11px] text-muted text-left">Link toko hanya tersedia saat dibuka langsung di browser (bukan di preview iframe).</p>'+
-    '</div>';
-  }else{
-    box.innerHTML='<div class="flex items-center gap-2 bg-surface rounded-lg p-2.5">'+
-      '<i class="fas fa-link text-accent text-xs shrink-0"></i>'+
-      '<input type="text" value="'+url+'" readonly class="bg-transparent border-none text-xs text-muted flex-1 outline-none" style="min-width:0">'+
-      (showCopyBtn?'<button type="button" data-copylink class="text-xs text-accent hover:underline font-semibold shrink-0">Salin</button>':'')+
-    '</div>';
-  }
-}
-
-/* ===================== EVENT BINDING (sekali, di DOM permanen) ===================== */
+/* ===== EVENT BINDING PERMANEN ===== */
 document.getElementById('loginForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var u=document.getElementById('loginUser').value.trim().toLowerCase();
-  var p=document.getElementById('loginPass').value;
-  var found=null;
+  e.preventDefault();var u=document.getElementById('loginUser').value.trim().toLowerCase(),p=document.getElementById('loginPass').value,found=null;
   for(var i=0;i<accounts.length;i++){if(accounts[i].user===u&&accounts[i].pass===p){found=accounts[i];break}}
   if(found){currentUser=found;enterDashboard()}
-  else{
-    var err=document.getElementById('loginError');
-    err.textContent='Username atau password salah!';
-    err.style.display='block';
-    setTimeout(function(){err.style.display='none'},3000);
-  }
+  else{var err=document.getElementById('loginError');err.textContent='Username atau password salah!';err.style.display='block';setTimeout(function(){err.style.display='none'},3000)}
 });
-
-document.getElementById('btnGuest').addEventListener('click',function(){
-  currentUser={id:0,user:'guest',name:'Pengunjung',email:'',role:'guest',avatar:null,avatarBg:'rgba(119,119,119,.2)',avatarColor:'#777'};
-  enterShop();
-});
-
-/* Salin link dari login page (delegasi) */
-document.getElementById('linkBoxLogin').addEventListener('click',function(e){
-  if(e.target.closest('[data-copylink]')){copyText(getShopUrl())}
-});
-
-document.getElementById('modalOverlay').addEventListener('click',function(e){
-  if(e.target===this)closeModal();
-});
-
-document.getElementById('btnMobileToggle').addEventListener('click',function(){
-  document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('sidebarBackdrop').classList.toggle('show');
-});
-document.getElementById('sidebarBackdrop').addEventListener('click',function(){
-  document.getElementById('sidebar').classList.remove('open');
-  this.classList.remove('show');
-});
-
-document.getElementById('btnLogout').addEventListener('click',function(){
-  cart=[];updateBadges();currentUser=null;backToLogin();
-  toast('Berhasil keluar','fa-sign-out-alt','#f4a261');
-});
-
+document.getElementById('btnGuest').addEventListener('click',function(){currentUser={id:0,user:'guest',name:'Pengunjung',email:'',role:'guest',avatar:null,avatarBg:'rgba(119,119,119,.2)',avatarColor:'#777'};enterShop()});
+document.getElementById('linkBoxLogin').addEventListener('click',function(e){if(e.target.closest('[data-copylink]'))copyText(getShopUrl())});
+document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.getElementById('btnMobileToggle').addEventListener('click',function(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebarBackdrop').classList.toggle('show')});
+document.getElementById('sidebarBackdrop').addEventListener('click',function(){document.getElementById('sidebar').classList.remove('open');this.classList.remove('show')});
+document.getElementById('btnLogout').addEventListener('click',doLogout);
 document.getElementById('btnHeaderCart').addEventListener('click',function(){go('cart')});
 document.getElementById('btnShopCart').addEventListener('click',function(){goShopPage('shopCart')});
 document.getElementById('btnShopLogin').addEventListener('click',function(){backToLogin()});
-
-document.getElementById('globalSearch').addEventListener('input',function(){
-  if(currentPage==='products')render();
-});
-document.getElementById('shopSearch').addEventListener('input',function(){
-  if(shopSubPage==='products')renderShopProducts();
-});
-
+document.getElementById('globalSearch').addEventListener('input',function(){if(currentPage==='products')render()});
+document.getElementById('shopSearch').addEventListener('input',function(){if(shopSubPage==='products')renderShopProducts()});
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){closeModal();
-    document.getElementById('sidebar').classList.remove('open');
-    document.getElementById('sidebarBackdrop').classList.remove('show');
-  }
-});
+  if(e.key==='Escape'){closeModal();document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarBackdrop').classList.remove('show')}
+  if(e.key==='F12'){e.preventDefault();return false}
+  if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='i')){e.preventDefault();return false}
+  if(e.ctrlKey&&e.shiftKey&&(e.key==='J'||e.key==='j')){e.preventDefault();return false}
+  if(e.ctrlKey&&e.shiftKey&&(e.key==='C'||e.key==='c')){e.preventDefault();return false}
+  if(e.ctrlKey&&(e.key==='U'||e.key==='u')){e.preventDefault();return false}
+  if(e.ctrlKey&&(e.key==='S'||e.key==='s')){e.preventDefault();return false}
+  if(e.ctrlKey&&(e.key==='P'||e.key==='p')){e.preventDefault();return false}
+},{capture:true});
+document.addEventListener('contextmenu',function(e){e.preventDefault()});
+document.addEventListener('selectstart',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;e.preventDefault()});
+document.addEventListener('dragstart',function(e){e.preventDefault()});
 
-/* ===================== LOGIN SYSTEM ===================== */
+/* ===== LOGOUT: simpan data, hapus session, ke login ===== */
+function doLogout(){
+  saveData();          /* keranjang tetap tersimpan */
+  clearSession();      /* hapus session login */
+  currentUser=null;
+  backToLogin();
+  toast('Berhasil keluar','fa-sign-out-alt','#f4a261');
+}
+
+/* ===== LOGIN SYSTEM ===== */
 function enterDashboard(){
   document.getElementById('loginPage').style.display='none';
   document.getElementById('shopPage').style.display='none';
@@ -407,15 +366,14 @@ function enterDashboard(){
   document.getElementById('loginUser').value='';
   document.getElementById('loginPass').value='';
   document.getElementById('loginError').style.display='none';
-  if(currentUser.role==='customer')go('products');
-  else go('dashboard');
+  saveSession();
+  if(currentUser.role==='customer')go('products');else go('dashboard');
 }
 function enterShop(){
   document.getElementById('loginPage').style.display='none';
   document.getElementById('dashboardPage').style.display='none';
   document.getElementById('shopPage').style.display='block';
-  shopSubPage='products';
-  renderShopContent();
+  shopSubPage='products';renderShopContent();saveSession();
 }
 function backToLogin(){
   document.getElementById('shopPage').style.display='none';
@@ -423,86 +381,36 @@ function backToLogin(){
   document.getElementById('loginPage').style.display='flex';
   renderLinkBox('linkBoxLogin',true);
 }
-function enterAsGuest(){
-  currentUser={id:0,user:'guest',name:'Pengunjung',email:'',role:'guest',avatar:null,avatarBg:'rgba(119,119,119,.2)',avatarColor:'#777'};
-  enterShop();
-}
-
-/* Hash routing — skip jika di srcdoc (hash tidak berfungsi) */
-function checkHash(){
-  if(isSrcdoc())return;
-  try{
-    if(window.location.hash==='#shop'&&(!currentUser||currentUser.role==='guest')){
-      enterAsGuest();
-    }
-  }catch(e){}
-}
+function enterAsGuest(){currentUser={id:0,user:'guest',name:'Pengunjung',email:'',role:'guest',avatar:null,avatarBg:'rgba(119,119,119,.2)',avatarColor:'#777'};enterShop()}
+function checkHash(){if(isSrcdoc())return;try{if(window.location.hash==='#shop'&&(!currentUser||currentUser.role==='guest'))enterAsGuest()}catch(e){}}
 window.addEventListener('hashchange',checkHash);
 
-/* ===================== SIDEBAR ===================== */
+/* ===== SIDEBAR ===== */
 function buildSidebar(){
-  var u=currentUser;
-  var isAdmin=u.role==='admin';
-  var isStaff=u.role==='staff';
-  var isCustomer=u.role==='customer';
+  var u=currentUser,isAdmin=u.role==='admin',isStaff=u.role==='staff',isCustomer=u.role==='customer';
   document.getElementById('sidebarRole').textContent={admin:'Admin Panel',staff:'Staff Panel',customer:'Akun Pelanggan'}[u.role];
-  document.getElementById('sidebarName').textContent=u.name;
-  document.getElementById('sidebarEmail').textContent=u.email||'Pengunjung';
-  if(u.avatar){
-    document.getElementById('sidebarAvatar').innerHTML='<img src="'+u.avatar+'" class="w-9 h-9 rounded-full object-cover" alt="'+u.name+'">';
-    document.getElementById('sidebarAvatar').style.background='transparent';
-  }else{
-    document.getElementById('sidebarAvatar').innerHTML='<i class="fas fa-user text-sm" style="color:'+u.avatarColor+'"></i>';
-    document.getElementById('sidebarAvatar').style.background=u.avatarBg;
-  }
+  document.getElementById('sidebarName').textContent=u.name;document.getElementById('sidebarEmail').textContent=u.email||'Pengunjung';
+  if(u.avatar){document.getElementById('sidebarAvatar').innerHTML='<img src="'+u.avatar+'" class="w-9 h-9 rounded-full object-cover" alt="'+u.name+'">';document.getElementById('sidebarAvatar').style.background='transparent'}
+  else{document.getElementById('sidebarAvatar').innerHTML='<i class="fas fa-user text-sm" style="color:'+u.avatarColor+'"></i>';document.getElementById('sidebarAvatar').style.background=u.avatarBg}
   document.getElementById('searchWrap').style.display=isCustomer?'none':'';
   var items=[];
-  if(isAdmin||isStaff){
-    items.push({section:'Menu Utama',nav:[
-      {id:'dashboard',icon:'fa-th-large',label:'Dashboard',show:isAdmin},
-      {id:'products',icon:'fa-box-open',label:'Produk',show:true},
-      {id:'add-product',icon:'fa-plus-circle',label:'Tambah Produk',show:isAdmin}
-    ]});
-    items.push({section:'Transaksi',nav:[{id:'cart',icon:'fa-shopping-bag',label:'Keranjang',show:true,badge:true}]});
-    items.push({section:'Lainnya',nav:[{id:'manage-accounts',icon:'fa-users-cog',label:'Kelola Akun',show:isAdmin}]});
-  }else{
-    items.push({section:'Belanja',nav:[
-      {id:'products',icon:'fa-box-open',label:'Daftar Produk',show:true},
-      {id:'cart',icon:'fa-shopping-bag',label:'Keranjang',show:true,badge:true}
-    ]});
-    items.push({section:'Info',nav:[{id:'my-account',icon:'fa-user-circle',label:'Akun Saya',show:true}]});
-  }
+  if(isAdmin||isStaff){items.push({section:'Menu Utama',nav:[{id:'dashboard',icon:'fa-th-large',label:'Dashboard',show:isAdmin},{id:'products',icon:'fa-box-open',label:'Produk',show:true},{id:'add-product',icon:'fa-plus-circle',label:'Tambah Produk',show:isAdmin}]});items.push({section:'Transaksi',nav:[{id:'cart',icon:'fa-shopping-bag',label:'Keranjang',show:true,badge:true}]});items.push({section:'Lainnya',nav:[{id:'manage-accounts',icon:'fa-users-cog',label:'Kelola Akun',show:isAdmin}]})}
+  else{items.push({section:'Belanja',nav:[{id:'products',icon:'fa-box-open',label:'Daftar Produk',show:true},{id:'cart',icon:'fa-shopping-bag',label:'Keranjang',show:true,badge:true}]});items.push({section:'Info',nav:[{id:'my-account',icon:'fa-user-circle',label:'Akun Saya',show:true}]})}
   var html='';
-  items.forEach(function(sec){
-    var visible=sec.nav.filter(function(n){return n.show});
-    if(!visible.length)return;
-    html+='<p class="text-[10px] text-muted uppercase tracking-widest px-8 mb-2 font-semibold">'+sec.section+'</p>';
-    visible.forEach(function(n){
-      html+='<div class="nav-item" data-page="'+n.id+'"><i class="fas '+n.icon+'"></i><span>'+n.label+'</span>';
-      if(n.badge)html+='<span id="sidebarCartBadge" class="ml-auto bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full" style="display:none">0</span>';
-      html+='</div>';
-    });
-  });
+  items.forEach(function(sec){var vis=sec.nav.filter(function(n){return n.show});if(!vis.length)return;html+='<p class="text-[10px] text-muted uppercase tracking-widest px-8 mb-2 font-semibold">'+sec.section+'</p>';vis.forEach(function(n){html+='<div class="nav-item" data-page="'+n.id+'"><i class="fas '+n.icon+'"></i><span>'+n.label+'</span>'+(n.badge?'<span id="sidebarCartBadge" class="ml-auto bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full" style="display:none">0</span>':'')+'</div>'})});
   document.getElementById('sidebarNav').innerHTML=html;
-  document.getElementById('sidebarNav').onclick=function(e){
-    var item=e.target.closest('.nav-item');
-    if(item){var page=item.getAttribute('data-page');if(page)go(page)}
-  };
+  document.getElementById('sidebarNav').onclick=function(e){var item=e.target.closest('.nav-item');if(item){var pg=item.getAttribute('data-page');if(pg)go(pg)}};
 }
 
-/* ===================== NAVIGASI ===================== */
+/* ===== NAVIGASI ===== */
 function go(page){
   currentPage=page;
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebarBackdrop').classList.remove('show');
+  document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarBackdrop').classList.remove('show');
   var map={dashboard:'Dashboard',products:'Produk','add-product':'Tambah Produk',cart:'Keranjang','manage-accounts':'Kelola Akun','my-account':'Akun Saya','Daftar Produk':'Daftar Produk'};
-  document.querySelectorAll('.nav-item').forEach(function(n){
-    var lbl=n.querySelector('span');n.classList.toggle('active',lbl&&lbl.textContent===map[page]);
-  });
+  document.querySelectorAll('.nav-item').forEach(function(n){var lbl=n.querySelector('span');n.classList.toggle('active',lbl&&lbl.textContent===map[page])});
   var t={dashboard:'DASHBOARD',products:'PRODUK','add-product':'TAMBAH PRODUK',cart:'KERANJANG','manage-accounts':'KELOLA AKUN','my-account':'AKUN SAYA'};
   var s={dashboard:'Ringkasan toko dan aktivitas terbaru',products:'Kelola semua produk toko','add-product':'Formulir penambahan produk baru',cart:'Kelola keranjang belanja','manage-accounts':'Tambah dan kelola akun pengguna','my-account':'Informasi akun Anda'};
-  document.getElementById('pageTitle').textContent=t[page]||'';
-  document.getElementById('pageSubtitle').textContent=s[page]||'';
+  document.getElementById('pageTitle').textContent=t[page]||'';document.getElementById('pageSubtitle').textContent=s[page]||'';
   var el=document.getElementById('pageContent');
   if(page==='dashboard')el.innerHTML=pageDashboard();
   else if(page==='products')el.innerHTML=pageProducts(currentUser);
@@ -510,374 +418,125 @@ function go(page){
   else if(page==='cart')el.innerHTML=pageCart();
   else if(page==='manage-accounts')el.innerHTML=pageManageAccounts();
   else if(page==='my-account')el.innerHTML=pageMyAccount();
-  updateBadges();
+  updateBadges();saveSession();   /* <-- simpan halaman aktif */
 }
 function render(){go(currentPage)}
-function renderCurrent(){
-  if(document.getElementById('dashboardPage').style.display!=='none')render();
-  else if(document.getElementById('shopPage').style.display!=='none')renderShopContent();
-}
+function renderCurrent(){if(document.getElementById('dashboardPage').style.display!=='none')render();else if(document.getElementById('shopPage').style.display!=='none')renderShopContent()}
 
-/* ===================== PRODUCT CARD ===================== */
+/* ===== PRODUCT CARD ===== */
 function productCardHTML(p,isAdmin){
-  var ac=p.accentColor||'#e63946';
-  var d=p.originalPrice?Math.round((1-p.price/p.originalPrice)*100):0;
-  var stockPct=Math.min(100,Math.max(2,p.stock/50*100));
-  var stockColor=p.stock<=5?'#e63946':p.stock<=15?'#f4a261':'#2ecc71';
-  return '<div class="product-card" style="--card-accent:'+ac+'">'+
-    '<div class="img-wrap">'+
-      '<span class="badge-tag" style="background:'+p.badgeBg+'">'+p.badge+'</span>'+
-      (isAdmin?'<div class="card-admin-actions"><button type="button" data-del="'+p.id+'" class="card-admin-btn del" title="Hapus"><i class="fas fa-trash"></i></button></div>':'')+
-      '<img src="'+p.img+'" alt="'+p.name+'" loading="lazy">'+
-      '<div class="card-stock-bar"><div class="fill" style="width:'+stockPct+'%;background:'+stockColor+'"></div></div>'+
-    '</div>'+
-    '<div class="card-body">'+
-      '<p class="card-cat">'+p.category+'</p>'+
-      '<h3 class="card-name">'+p.name+'</h3>'+
-      '<div class="card-price-row">'+
-        '<span class="card-price">'+fmt(p.price)+'</span>'+
-        (p.originalPrice?'<span class="card-price-old">'+fmt(p.originalPrice)+'</span>':'')+
-        (d?'<span style="font-size:10px;font-weight:700;color:#fff;background:rgba(230,57,70,.2);padding:2px 7px;border-radius:4px">-'+d+'%</span>':'')+
-      '</div>'+
-      (isAdmin?'<div style="display:flex;align-items:center;gap:6px;margin-bottom:12px"><span class="stock-dot '+sClass(p.stock)+'"></span><span style="font-size:11px;color:#777">'+sLabel(p.stock)+' ('+p.stock+')</span></div>':'')+
-      '<button type="button" data-addcart="'+p.id+'" class="card-btn">PESAN SEKARANG <span class="arrow">&rarr;</span></button>'+
-    '</div></div>';
+  var ac=p.accentColor||'#e63946',d=p.originalPrice?Math.round((1-p.price/p.originalPrice)*100):0;
+  var sp=Math.min(100,Math.max(2,p.stock/50*100)),sc=p.stock<=5?'#e63946':p.stock<=15?'#f4a261':'#2ecc71';
+  return '<div class="product-card" style="--card-accent:'+ac+'"><div class="img-wrap"><span class="badge-tag" style="background:'+p.badgeBg+'">'+p.badge+'</span>'+(isAdmin?'<div class="card-admin-actions"><button type="button" data-del="'+p.id+'" class="card-admin-btn del" title="Hapus"><i class="fas fa-trash"></i></button></div>':'')+'<img src="'+p.img+'" alt="'+p.name+'" loading="lazy"><div class="card-stock-bar"><div class="fill" style="width:'+sp+'%;background:'+sc+'"></div></div></div><div class="card-body"><p class="card-cat">'+p.category+'</p><h3 class="card-name">'+p.name+'</h3><div class="card-price-row"><span class="card-price">'+fmt(p.price)+'</span>'+(p.originalPrice?'<span class="card-price-old">'+fmt(p.originalPrice)+'</span>':'')+(d?'<span style="font-size:10px;font-weight:700;color:#fff;background:rgba(230,57,70,.2);padding:2px 7px;border-radius:4px">-'+d+'%</span>':'')+'</div>'+(isAdmin?'<div style="display:flex;align-items:center;gap:6px;margin-bottom:12px"><span class="stock-dot '+sClass(p.stock)+'"></span><span style="font-size:11px;color:#777">'+sLabel(p.stock)+' ('+p.stock+')</span></div>':'')+'<button type="button" data-addcart="'+p.id+'" class="card-btn">PESAN SEKARANG <span class="arrow">&rarr;</span></button></div></div>';
 }
+function filterBtnsHTML(af){return '<div class="flex flex-wrap gap-2 mb-6">'+['all','protein','mass','creatine','preworkout','aksesoris'].map(function(c){return '<button type="button" class="filter-btn '+(c===af?'on':'')+'" data-filter="'+c+'">'+(c==='all'?'Semua':c.charAt(0).toUpperCase()+c.slice(1))+'</button>'}).join('')+'</div>'}
+function getFilteredList(sid){var q=(document.getElementById(sid)?document.getElementById(sid).value:'').toLowerCase(),l=products.slice(),f=sid==='shopSearch'?shopFilter:pFilter;if(f!=='all')l=l.filter(function(p){return p.category===f});if(q)l=l.filter(function(p){return p.name.toLowerCase().indexOf(q)!==-1||p.category.toLowerCase().indexOf(q)!==-1});if(pSort==='price-low')l.sort(function(a,b){return a.price-b.price});if(pSort==='price-high')l.sort(function(a,b){return b.price-a.price});if(pSort==='rating')l.sort(function(a,b){return b.rating-a.rating});return l}
+function pageProducts(u){var isA=u&&(u.role==='admin'||u.role==='staff'),list=getFilteredList('globalSearch'),html=filterBtnsHTML(pFilter);if(isA)html+='<div class="mb-4"><select id="sortSelect" class="bg-surface border border-border rounded-lg px-3 py-2 text-xs text-txt focus:outline-none focus:border-accent"><option value="default" '+(pSort==='default'?'selected':'')+'>Urutkan</option><option value="price-low" '+(pSort==='price-low'?'selected':'')+'>Harga Terendah</option><option value="price-high" '+(pSort==='price-high'?'selected':'')+'>Harga Tertinggi</option><option value="rating" '+(pSort==='rating'?'selected':'')+'>Rating Tertinggi</option></select></div>';if(!list.length)html+='<div class="text-center py-16 text-muted"><i class="fas fa-search text-3xl mb-3 block opacity-30"></i>Tidak ada produk ditemukan</div>';else html+='<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">'+list.map(function(p){return productCardHTML(p,isA)}).join('')+'</div>';return html}
 
-function filterBtnsHTML(activeFilter){
-  var cats=['all','protein','mass','creatine','preworkout','aksesoris'];
-  return '<div class="flex flex-wrap gap-2 mb-6">'+cats.map(function(c){
-    return '<button type="button" class="filter-btn '+(c===activeFilter?'on':'')+'" data-filter="'+c+'">'+(c==='all'?'Semua':c.charAt(0).toUpperCase()+c.slice(1))+'</button>';
-  }).join('')+'</div>';
-}
-
-function getFilteredList(searchId){
-  var q=(document.getElementById(searchId)?document.getElementById(searchId).value:'').toLowerCase();
-  var l=products.slice();
-  var f=searchId==='shopSearch'?shopFilter:pFilter;
-  if(f!=='all')l=l.filter(function(p){return p.category===f});
-  if(q)l=l.filter(function(p){return p.name.toLowerCase().indexOf(q)!==-1||p.category.toLowerCase().indexOf(q)!==-1});
-  if(pSort==='price-low')l.sort(function(a,b){return a.price-b.price});
-  if(pSort==='price-high')l.sort(function(a,b){return b.price-a.price});
-  if(pSort==='rating')l.sort(function(a,b){return b.rating-a.rating});
-  return l;
-}
-
-function pageProducts(u){
-  var isAdmin=u&&(u.role==='admin'||u.role==='staff');
-  var list=getFilteredList('globalSearch');
-  var html=filterBtnsHTML(pFilter);
-  if(isAdmin){
-    html+='<div class="mb-4"><select id="sortSelect" class="bg-surface border border-border rounded-lg px-3 py-2 text-xs text-txt focus:outline-none focus:border-accent"><option value="default" '+(pSort==='default'?'selected':'')+'>Urutkan</option><option value="price-low" '+(pSort==='price-low'?'selected':'')+'>Harga Terendah</option><option value="price-high" '+(pSort==='price-high'?'selected':'')+'>Harga Tertinggi</option><option value="rating" '+(pSort==='rating'?'selected':'')+'>Rating Tertinggi</option></select></div>';
-  }
-  if(!list.length)html+='<div class="text-center py-16 text-muted"><i class="fas fa-search text-3xl mb-3 block opacity-30"></i>Tidak ada produk ditemukan</div>';
-  else html+='<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">'+list.map(function(p){return productCardHTML(p,isAdmin)}).join('')+'</div>';
-  return html;
-}
-
-/* ===================== DELEGASI KLIK UMUM ===================== */
-function delegateClick(containerId,handler){
-  document.getElementById(containerId).addEventListener('click',function(e){
-    handler(e);
-  });
-}
-
-/* Dashboard pageContent delegasi */
-delegateClick('pageContent',function(e){
-  /* Filter */
-  var fb=e.target.closest('[data-filter]');
-  if(fb){pFilter=fb.getAttribute('data-filter');render();return}
-  /* Add to cart */
-  var ac=e.target.closest('[data-addcart]');
-  if(ac){addToCart(parseInt(ac.getAttribute('data-addcart')));return}
-  /* Delete product */
-  var dp=e.target.closest('[data-del]');
-  if(dp){confirmDel(parseInt(dp.getAttribute('data-del')));return}
-  /* Cart qty */
-  var cm=e.target.closest('[data-cartminus]');
-  if(cm){cartQty(parseInt(cm.getAttribute('data-cartminus')),-1);return}
-  var cp=e.target.closest('[data-cartplus]');
-  if(cp){cartQty(parseInt(cp.getAttribute('data-cartplus')),1);return}
-  var cr=e.target.closest('[data-cartremove]');
-  if(cr){cartRemove(parseInt(cr.getAttribute('data-cartremove')));return}
-  /* Cart actions */
+/* ===== DELEGASI KLIK ===== */
+function dc(id,fn){document.getElementById(id).addEventListener('click',fn)}
+dc('pageContent',function(e){
+  var fb=e.target.closest('[data-filter]');if(fb){pFilter=fb.getAttribute('data-filter');render();return}
+  var ac=e.target.closest('[data-addcart]');if(ac){addToCart(parseInt(ac.getAttribute('data-addcart')));return}
+  var dp=e.target.closest('[data-del]');if(dp){confirmDel(parseInt(dp.getAttribute('data-del')));return}
+  var cm=e.target.closest('[data-cartminus]');if(cm){cartQty(parseInt(cm.getAttribute('data-cartminus')),-1);return}
+  var cp=e.target.closest('[data-cartplus]');if(cp){cartQty(parseInt(cp.getAttribute('data-cartplus')),1);return}
+  var cr=e.target.closest('[data-cartremove]');if(cr){cartRemove(parseInt(cr.getAttribute('data-cartremove')));return}
   if(e.target.closest('#btnClearCart')){clearCartConfirm();return}
   if(e.target.closest('#btnCheckout')){checkout();return}
-  /* Account management */
   if(e.target.closest('#btnShowAddAcc')){showAddAccount();return}
-  var da=e.target.closest('[data-delacc]');
-  if(da){deleteAccount(parseInt(da.getAttribute('data-delacc')));return}
+  var da=e.target.closest('[data-delacc]');if(da){deleteAccount(parseInt(da.getAttribute('data-delacc')));return}
   if(e.target.closest('#btnCopyDash')){copyText(getShopUrl());return}
-  /* Profile logout */
-  if(e.target.closest('#btnLogoutFromProfile')){
-    cart=[];updateBadges();currentUser=null;backToLogin();
-    toast('Berhasil keluar','fa-sign-out-alt','#f4a261');return;
-  }
+  if(e.target.closest('#btnResetData')){resetAllData();return}
+  if(e.target.closest('#btnLogoutFromProfile')){doLogout();return}
 });
-
-/* Sort change */
-delegateClick('pageContent',function(){});
-document.getElementById('pageContent').addEventListener('change',function(e){
-  if(e.target.id==='sortSelect'){pSort=e.target.value;render()}
-});
-
-/* Shop content delegasi */
-delegateClick('shopContent',function(e){
-  var fb=e.target.closest('[data-filter]');
-  if(fb){shopFilter=fb.getAttribute('data-filter');renderShopProducts();return}
-  var ac=e.target.closest('[data-addcart]');
-  if(ac){addToCart(parseInt(ac.getAttribute('data-addcart')));return}
-  var cm=e.target.closest('[data-cartminus]');
-  if(cm){cartQty(parseInt(cm.getAttribute('data-cartminus')),-1);return}
-  var cp=e.target.closest('[data-cartplus]');
-  if(cp){cartQty(parseInt(cp.getAttribute('data-cartplus')),1);return}
-  var cr=e.target.closest('[data-cartremove]');
-  if(cr){cartRemove(parseInt(cr.getAttribute('data-cartremove')));return}
+document.getElementById('pageContent').addEventListener('change',function(e){if(e.target.id==='sortSelect'){pSort=e.target.value;render()}});
+dc('shopContent',function(e){
+  var fb=e.target.closest('[data-filter]');if(fb){shopFilter=fb.getAttribute('data-filter');renderShopProducts();return}
+  var ac=e.target.closest('[data-addcart]');if(ac){addToCart(parseInt(ac.getAttribute('data-addcart')));return}
+  var cm=e.target.closest('[data-cartminus]');if(cm){cartQty(parseInt(cm.getAttribute('data-cartminus')),-1);return}
+  var cp=e.target.closest('[data-cartplus]');if(cp){cartQty(parseInt(cp.getAttribute('data-cartplus')),1);return}
+  var cr=e.target.closest('[data-cartremove]');if(cr){cartRemove(parseInt(cr.getAttribute('data-cartremove')));return}
   if(e.target.closest('#btnClearCart')){clearCartConfirm();return}
   if(e.target.closest('#btnCheckout')){checkout();return}
 });
 
-/* ===================== DASHBOARD ===================== */
-function pageDashboard(){
-  var tp=products.length;
-  var ts=products.reduce(function(s,p){return s+p.stock},0);
-  var ar=tp?(products.reduce(function(s,p){return s+p.rating},0)/tp).toFixed(1):'0';
-  var low=products.filter(function(p){return p.stock<=10});
-  return '<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">'+
-    sc('fa-box-open','text-accent','bg-accent/10',tp,'Total Produk')+
-    sc('fa-cubes','text-gold','bg-gold/10',ts,'Total Stok')+
-    sc('fa-star','text-green','bg-green/10',ar,'Rating Rata-rata')+
-    sc('fa-users','text-blue','bg-blue/10',accounts.length,'Total Akun')+
-  '</div>'+
-  '<div class="grid lg:grid-cols-3 gap-6">'+
-    '<div class="lg:col-span-2 bg-card border border-border rounded-2xl p-5">'+
-      '<h3 class="font-heading text-lg text-white tracking-wide mb-4"><i class="fas fa-exclamation-triangle text-gold mr-2"></i>PERINGATAN STOK</h3>'+
-      (!low.length?'<p class="text-muted text-sm text-center py-8">Semua stok aman</p>':
-      '<div class="space-y-3">'+low.map(function(p){return '<div class="flex items-center gap-3 bg-surface rounded-xl p-3"><img src="'+p.img+'" class="w-12 h-12 rounded-lg object-cover" alt="'+p.name+'"><div class="flex-1 min-w-0"><p class="text-sm font-semibold text-txt truncate">'+p.name+'</p><p class="text-xs text-muted">'+p.category+'</p></div><div class="text-right"><p class="text-sm font-bold '+(p.stock<=5?'text-accent':'text-gold')+'">'+p.stock+' unit</p><p class="text-[10px] text-muted">'+sLabel(p.stock)+'</p></div></div>'}).join('')+'</div>')+
-    '</div>'+
-    '<div class="bg-card border border-border rounded-2xl p-5">'+
-      '<h3 class="font-heading text-lg text-white tracking-wide mb-4"><i class="fas fa-chart-pie text-accent mr-2"></i>KATEGORI</h3>'+
-      '<div class="space-y-3">'+['protein','mass','creatine','preworkout','aksesoris'].map(function(c){
-        var n=products.filter(function(p){return p.category===c}).length;
-        var pct=tp?Math.round(n/tp*100):0;
-        var clr={protein:'#e63946',mass:'#f4a261',creatine:'#2ecc71',preworkout:'#3498db',aksesoris:'#9b59b6'};
-        return '<div><div class="flex justify-between text-xs mb-1"><span class="text-txt capitalize">'+c+'</span><span class="text-muted">'+n+' produk</span></div><div class="h-2 bg-surface rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:'+pct+'%;background:'+clr[c]+'"></div></div></div>';
-      }).join('')+'</div>'+
-    '</div></div>';
-}
-function sc(icon,ic,bg,val,label){
-  return '<div class="stat-card"><div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl '+bg+' flex items-center justify-center"><i class="fas '+icon+' '+ic+'"></i></div></div><p class="text-2xl font-bold text-white">'+val+'</p><p class="text-muted text-xs mt-1">'+label+'</p></div>';
-}
+/* ===== DASHBOARD ===== */
+function pageDashboard(){var tp=products.length,ts=products.reduce(function(s,p){return s+p.stock},0),ar=tp?(products.reduce(function(s,p){return s+p.rating},0)/tp).toFixed(1):'0';var low=products.filter(function(p){return p.stock<=10});return '<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">'+sc('fa-box-open','text-accent','bg-accent/10',tp,'Total Produk')+sc('fa-cubes','text-gold','bg-gold/10',ts,'Total Stok')+sc('fa-star','text-green','bg-green/10',ar,'Rating Rata-rata')+sc('fa-users','text-blue','bg-blue/10',accounts.length,'Total Akun')+'</div><div class="grid lg:grid-cols-3 gap-6"><div class="lg:col-span-2 bg-card border border-border rounded-2xl p-5"><h3 class="font-heading text-lg text-white tracking-wide mb-4"><i class="fas fa-exclamation-triangle text-gold mr-2"></i>PERINGATAN STOK</h3>'+(!low.length?'<p class="text-muted text-sm text-center py-8">Semua stok aman</p>':'<div class="space-y-3">'+low.map(function(p){return '<div class="flex items-center gap-3 bg-surface rounded-xl p-3"><img src="'+p.img+'" class="w-12 h-12 rounded-lg object-cover" alt="'+p.name+'"><div class="flex-1 min-w-0"><p class="text-sm font-semibold text-txt truncate">'+p.name+'</p><p class="text-xs text-muted">'+p.category+'</p></div><div class="text-right"><p class="text-sm font-bold '+(p.stock<=5?'text-accent':'text-gold')+'">'+p.stock+' unit</p><p class="text-[10px] text-muted">'+sLabel(p.stock)+'</p></div></div>'}).join('')+'</div>')+'</div><div class="bg-card border border-border rounded-2xl p-5"><h3 class="font-heading text-lg text-white tracking-wide mb-4"><i class="fas fa-chart-pie text-accent mr-2"></i>KATEGORI</h3><div class="space-y-3">'+['protein','mass','creatine','preworkout','aksesoris'].map(function(c){var n=products.filter(function(p){return p.category===c}).length,pct=tp?Math.round(n/tp*100):0,clr={protein:'#e63946',mass:'#f4a261',creatine:'#2ecc71',preworkout:'#3498db',aksesoris:'#9b59b6'};return '<div><div class="flex justify-between text-xs mb-1"><span class="text-txt capitalize">'+c+'</span><span class="text-muted">'+n+' produk</span></div><div class="h-2 bg-surface rounded-full overflow-hidden"><div class="h-full rounded-full" style="width:'+pct+'%;background:'+clr[c]+'"></div></div></div>'}).join('')+'</div></div></div>'}
+function sc(icon,ic,bg,val,label){return '<div class="stat-card"><div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-xl '+bg+' flex items-center justify-center"><i class="fas '+icon+' '+ic+'"></i></div></div><p class="text-2xl font-bold text-white">'+val+'</p><p class="text-muted text-xs mt-1">'+label+'</p></div>'}
 
-/* ===================== KERANJANG ===================== */
-function cartHTML(backFn){
-  var tq=cart.reduce(function(s,c){return s+c.qty},0);
-  var tp=cart.reduce(function(s,c){return s+c.price*c.qty},0);
-  if(!cart.length)return '<div class="text-center py-20"><div class="w-20 h-20 mx-auto mb-4 rounded-full bg-surface flex items-center justify-center"><i class="fas fa-shopping-bag text-3xl text-muted opacity-30"></i></div><p class="text-muted text-lg mb-2">Keranjang masih kosong</p><p class="text-muted text-sm mb-6">Mulai belanja dengan memasukkan produk</p><button type="button" onclick="'+backFn+'" class="btn btn-primary" style="padding:12px 32px"><i class="fas fa-shopping-bag"></i> Belanja Sekarang</button></div>';
-  return '<div class="grid lg:grid-cols-3 gap-6">'+
-    '<div class="lg:col-span-2"><div class="bg-card border border-border rounded-2xl overflow-hidden">'+
-      '<div class="p-4 border-b border-border flex items-center justify-between"><span class="text-sm text-muted">'+cart.length+' produk ('+tq+' item)</span><button type="button" id="btnClearCart" class="text-xs text-accent hover:underline"><i class="fas fa-trash-alt mr-1"></i>Kosongkan</button></div>'+
-      cart.map(function(c,i){return '<div class="cart-row"><img src="'+c.img+'" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="'+c.name+'"><div class="flex-1 min-w-0"><h4 class="text-sm font-semibold text-txt truncate">'+c.name+'</h4><p class="text-accent font-bold text-sm">'+fmt(c.price)+'</p></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0"><button type="button" data-cartminus="'+i+'" class="qty-btn"><i class="fas fa-minus" style="font-size:10px"></i></button><span class="text-sm font-bold" style="width:28px;text-align:center">'+c.qty+'</span><button type="button" data-cartplus="'+i+'" class="qty-btn"><i class="fas fa-plus" style="font-size:10px"></i></button></div><span class="text-sm font-bold text-white shrink-0" style="width:96px;text-align:right">'+fmt(c.price*c.qty)+'</span><button type="button" data-cartremove="'+i+'" class="text-muted hover:text-accent transition shrink-0 ml-1" aria-label="Hapus"><i class="fas fa-times text-sm"></i></button></div>'}).join('')+
-    '</div></div>'+
-    '<div><div class="bg-card border border-border rounded-2xl p-5 sticky top-24">'+
-      '<h3 class="font-heading text-lg text-white mb-4">RINGKASAN</h3>'+
-      '<div class="space-y-3 mb-4"><div class="flex justify-between text-sm"><span class="text-muted">Subtotal ('+tq+' item)</span><span class="text-txt">'+fmt(tp)+'</span></div><div class="flex justify-between text-sm"><span class="text-muted">Ongkir</span><span class="text-green font-semibold">GRATIS</span></div><div class="border-t border-border pt-3 flex justify-between"><span class="font-heading text-lg text-white">TOTAL</span><span class="font-heading text-xl text-accent">'+fmt(tp)+'</span></div></div>'+
-      '<button type="button" id="btnCheckout" class="btn btn-primary" style="width:100%;padding:14px;margin-bottom:8px"><i class="fab fa-telegram"></i> Checkout via Telegram</button>'+
-      '<button type="button" onclick="'+backFn+'" class="btn btn-surface" style="width:100%;padding:10px"><i class="fas fa-arrow-left"></i> Lanjut Belanja</button>'+
-    '</div></div></div>';
-}
+/* ===== KERANJANG ===== */
+function cartHTML(bf){var tq=cart.reduce(function(s,c){return s+c.qty},0),tp=cart.reduce(function(s,c){return s+c.price*c.qty},0);if(!cart.length)return '<div class="text-center py-20"><div class="w-20 h-20 mx-auto mb-4 rounded-full bg-surface flex items-center justify-center"><i class="fas fa-shopping-bag text-3xl text-muted opacity-30"></i></div><p class="text-muted text-lg mb-2">Keranjang masih kosong</p><p class="text-muted text-sm mb-6">Mulai belanja dengan memasukkan produk</p><button type="button" onclick="'+bf+'" class="btn btn-primary" style="padding:12px 32px"><i class="fas fa-shopping-bag"></i> Belanja Sekarang</button></div>';return '<div class="grid lg:grid-cols-3 gap-6"><div class="lg:col-span-2"><div class="bg-card border border-border rounded-2xl overflow-hidden"><div class="p-4 border-b border-border flex items-center justify-between"><span class="text-sm text-muted">'+cart.length+' produk ('+tq+' item)</span><button type="button" id="btnClearCart" class="text-xs text-accent hover:underline"><i class="fas fa-trash-alt mr-1"></i>Kosongkan</button></div>'+cart.map(function(c,i){return '<div class="cart-row"><img src="'+c.img+'" class="w-16 h-16 rounded-xl object-cover shrink-0" alt="'+c.name+'"><div class="flex-1 min-w-0"><h4 class="text-sm font-semibold text-txt truncate">'+c.name+'</h4><p class="text-accent font-bold text-sm">'+fmt(c.price)+'</p></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0"><button type="button" data-cartminus="'+i+'" class="qty-btn"><i class="fas fa-minus" style="font-size:10px"></i></button><span class="text-sm font-bold" style="width:28px;text-align:center">'+c.qty+'</span><button type="button" data-cartplus="'+i+'" class="qty-btn"><i class="fas fa-plus" style="font-size:10px"></i></button></div><span class="text-sm font-bold text-white shrink-0" style="width:96px;text-align:right">'+fmt(c.price*c.qty)+'</span><button type="button" data-cartremove="'+i+'" class="text-muted hover:text-accent transition shrink-0 ml-1" aria-label="Hapus"><i class="fas fa-times text-sm"></i></button></div>'}).join('')+'</div></div><div><div class="bg-card border border-border rounded-2xl p-5 sticky top-24"><h3 class="font-heading text-lg text-white mb-4">RINGKASAN</h3><div class="space-y-3 mb-4"><div class="flex justify-between text-sm"><span class="text-muted">Subtotal ('+tq+' item)</span><span class="text-txt">'+fmt(tp)+'</span></div><div class="flex justify-between text-sm"><span class="text-muted">Ongkir</span><span class="text-green font-semibold">GRATIS</span></div><div class="border-t border-border pt-3 flex justify-between"><span class="font-heading text-lg text-white">TOTAL</span><span class="font-heading text-xl text-accent">'+fmt(tp)+'</span></div></div><button type="button" id="btnCheckout" class="btn btn-primary" style="width:100%;padding:14px;margin-bottom:8px"><i class="fab fa-telegram"></i> Checkout via Telegram</button><button type="button" onclick="'+bf+'" class="btn btn-surface" style="width:100%;padding:10px"><i class="fas fa-arrow-left"></i> Lanjut Belanja</button></div></div></div>'}
 function pageCart(){return cartHTML("go('products')")}
+function addToCart(id){var p=null;for(var i=0;i<products.length;i++){if(products[i].id===id){p=products[i];break}}if(!p)return;var ex=null;for(var i=0;i<cart.length;i++){if(cart[i].id===id){ex=cart[i];break}}if(ex){if(ex.qty>=p.stock){toast('Stok tidak mencukupi!','fa-exclamation-circle','#e63946');return}ex.qty++}else cart.push({id:p.id,name:p.name,price:p.price,img:p.img,qty:1,max:p.stock});saveData();updateBadges();toast(p.name+' masuk keranjang!','fa-cart-plus','#e63946')}
+function cartQty(idx,d){var item=cart[idx];if(!item)return;item.qty+=d;if(item.qty<=0){cart.splice(idx,1);toast('Produk dihapus','fa-trash','#e63946')}else if(item.qty>item.max){item.qty=item.max;toast('Maks stok tersedia','fa-exclamation-circle','#f4a261')}saveData();updateBadges();renderCurrent()}
+function cartRemove(idx){cart.splice(idx,1);saveData();updateBadges();toast('Dihapus dari keranjang','fa-trash','#e63946');renderCurrent()}
+function clearCartConfirm(){openModal('<div class="p-6 text-center"><div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center"><i class="fas fa-shopping-bag text-accent text-2xl"></i></div><h3 class="font-heading text-2xl text-white mb-2">KOSONGKAN KERANJANG?</h3><p class="text-muted text-sm mb-6">Semua produk akan dihapus.</p><div style="display:flex;gap:12px;justify-content:center"><button type="button" id="btnCancelClear" class="btn btn-surface" style="padding:10px 24px">Batal</button><button type="button" id="btnConfirmClear" class="btn btn-primary" style="padding:10px 24px"><i class="fas fa-trash"></i> Kosongkan</button></div></div>');document.getElementById('btnCancelClear').onclick=function(){closeModal()};document.getElementById('btnConfirmClear').onclick=function(){cart=[];saveData();updateBadges();closeModal();toast('Keranjang dikosongkan','fa-trash','#e63946');renderCurrent()}}
+function checkout(){if(!cart.length){toast('Keranjang kosong!','fa-exclamation-circle','#e63946');return}var m='Halo, saya mau order:%0A%0A';cart.forEach(function(c){m+='- '+c.name+' x'+c.qty+' = '+fmt(c.price*c.qty)+'%0A'});m+='%0ATotal: '+fmt(cart.reduce(function(s,c){return s+c.price*c.qty},0));window.open('https://t.me/USERNAME_KAMU?text='+m,'_blank')}
+function confirmDel(id){var p=null;for(var i=0;i<products.length;i++){if(products[i].id===id){p=products[i];break}}if(!p)return;openModal('<div class="p-6 text-center"><div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center"><i class="fas fa-trash-alt text-accent text-2xl"></i></div><h3 class="font-heading text-2xl text-white mb-2">HAPUS PRODUK?</h3><p class="text-muted text-sm mb-6">Yakin hapus <strong class="text-white">'+p.name+'</strong>?</p><div style="display:flex;gap:12px;justify-content:center"><button type="button" id="btnCancelDel" class="btn btn-surface" style="padding:10px 24px">Batal</button><button type="button" id="btnConfirmDel" class="btn btn-primary" style="padding:10px 24px"><i class="fas fa-trash"></i> Hapus</button></div></div>');document.getElementById('btnCancelDel').onclick=function(){closeModal()};document.getElementById('btnConfirmDel').onclick=function(){products=products.filter(function(x){return x.id!==id});cart=cart.filter(function(x){return x.id!==id});saveData();updateBadges();closeModal();toast('Produk berhasil dihapus','fa-trash-alt','#e63946');render()}}
 
-function addToCart(id){
-  var p=null;for(var i=0;i<products.length;i++){if(products[i].id===id){p=products[i];break}}
-  if(!p)return;
-  var ex=null;for(var i=0;i<cart.length;i++){if(cart[i].id===id){ex=cart[i];break}}
-  if(ex){if(ex.qty>=p.stock){toast('Stok tidak mencukupi!','fa-exclamation-circle','#e63946');return}ex.qty++}
-  else cart.push({id:p.id,name:p.name,price:p.price,img:p.img,qty:1,max:p.stock});
-  updateBadges();toast(p.name+' masuk keranjang!','fa-cart-plus','#e63946');
-}
-function cartQty(idx,d){
-  var item=cart[idx];if(!item)return;
-  item.qty+=d;
-  if(item.qty<=0){cart.splice(idx,1);toast('Produk dihapus','fa-trash','#e63946')}
-  else if(item.qty>item.max){item.qty=item.max;toast('Maks stok tersedia','fa-exclamation-circle','#f4a261')}
-  updateBadges();renderCurrent();
-}
-function cartRemove(idx){cart.splice(idx,1);updateBadges();toast('Dihapus dari keranjang','fa-trash','#e63946');renderCurrent()}
-function clearCartConfirm(){
-  openModal('<div class="p-6 text-center"><div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center"><i class="fas fa-shopping-bag text-accent text-2xl"></i></div><h3 class="font-heading text-2xl text-white mb-2">KOSONGKAN KERANJANG?</h3><p class="text-muted text-sm mb-6">Semua produk akan dihapus.</p><div style="display:flex;gap:12px;justify-content:center"><button type="button" id="btnCancelClear" class="btn btn-surface" style="padding:10px 24px">Batal</button><button type="button" id="btnConfirmClear" class="btn btn-primary" style="padding:10px 24px"><i class="fas fa-trash"></i> Kosongkan</button></div></div>');
-  document.getElementById('btnCancelClear').onclick=function(){closeModal()};
-  document.getElementById('btnConfirmClear').onclick=function(){cart=[];updateBadges();closeModal();toast('Keranjang dikosongkan','fa-trash','#e63946');renderCurrent()};
-}
-function checkout(){
-  if(!cart.length){toast('Keranjang kosong!','fa-exclamation-circle','#e63946');return}
-  var m='Halo, saya mau order:%0A%0A';
-  cart.forEach(function(c){m+='- '+c.name+' x'+c.qty+' = '+fmt(c.price*c.qty)+'%0A'});
-  m+='%0ATotal: '+fmt(cart.reduce(function(s,c){return s+c.price*c.qty},0));
-  window.open('https://t.me/USERNAME_KAMU?text='+m,'_blank');
-}
-function confirmDel(id){
-  var p=null;for(var i=0;i<products.length;i++){if(products[i].id===id){p=products[i];break}}
-  if(!p)return;
-  openModal('<div class="p-6 text-center"><div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center"><i class="fas fa-trash-alt text-accent text-2xl"></i></div><h3 class="font-heading text-2xl text-white mb-2">HAPUS PRODUK?</h3><p class="text-muted text-sm mb-6">Yakin hapus <strong class="text-white">'+p.name+'</strong>?</p><div style="display:flex;gap:12px;justify-content:center"><button type="button" id="btnCancelDel" class="btn btn-surface" style="padding:10px 24px">Batal</button><button type="button" id="btnConfirmDel" class="btn btn-primary" style="padding:10px 24px"><i class="fas fa-trash"></i> Hapus</button></div></div>');
-  document.getElementById('btnCancelDel').onclick=function(){closeModal()};
-  document.getElementById('btnConfirmDel').onclick=function(){
-    products=products.filter(function(x){return x.id!==id});
-    cart=cart.filter(function(x){return x.id!==id});
-    updateBadges();closeModal();toast('Produk berhasil dihapus','fa-trash-alt','#e63946');render();
-  };
-}
+/* ===== TAMBAH PRODUK ===== */
+function pageAddProduct(){return '<div class="max-w-2xl mx-auto bg-card border border-border rounded-2xl p-6"><h3 class="font-heading text-xl text-white mb-6"><i class="fas fa-plus-circle text-accent mr-2"></i>FORMULIR PRODUK BARU</h3><form id="addForm" class="space-y-4"><div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Nama Produk *</label><input type="text" name="name" class="form-input" placeholder="Contoh: EVOWHEY 30s" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Kategori *</label><select name="category" class="form-input" required><option value="">Pilih kategori</option><option value="protein">Protein</option><option value="mass">Mass Gainer</option><option value="creatine">Creatine</option><option value="preworkout">Pre-Workout</option><option value="aksesoris">Aksesoris</option></select></div></div><div class="grid sm:grid-cols-3 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Harga *</label><input type="number" name="price" class="form-input" placeholder="1000" min="1" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Harga Asli</label><input type="number" name="originalPrice" class="form-input" placeholder="1200 (opsional)" min="0"></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Stok *</label><input type="number" name="stock" class="form-input" placeholder="50" min="0" required></div></div><div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Badge Label</label><input type="text" name="badge" class="form-input" placeholder="BEST, NEW, -20%"></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Warna Aksen</label><div class="flex gap-2 mt-1">'+['#e63946','#f4a261','#2ecc71','#3498db','#9b59b6'].map(function(c,i){return '<label class="cursor-pointer"><input type="radio" name="accentColor" value="'+c+'" '+(i===0?'checked':'')+' class="hidden peer"><span class="w-8 h-8 rounded-lg border-2 border-transparent peer-checked:border-white block transition" style="background:'+c+'"></span></label>'}).join('')+'</div></div></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">URL Gambar *</label><input type="url" name="img" class="form-input" placeholder="https://images.unsplash.com/..." required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Deskripsi *</label><textarea name="desc" class="form-input" rows="3" placeholder="Jelaskan produk..." required></textarea></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Info Nutrisi</label><input type="text" name="nutrition" class="form-input" placeholder="25g Protein | 5g BCAA (opsional)"></div><div style="display:flex;gap:12px;padding-top:8px"><button type="submit" class="btn btn-primary" style="flex:1;padding:12px"><i class="fas fa-plus-circle"></i> Tambah Produk</button><button type="reset" class="btn btn-surface" style="padding:12px 24px">Reset</button></div></form></div>'}
+function bindAddForm(){var f=document.getElementById('addForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(f),name=fd.get('name').trim(),cat=fd.get('category'),price=fd.get('price'),stock=fd.get('stock'),img=fd.get('img').trim();if(!name||!cat||!price||!stock||!img){toast('Lengkapi field wajib!','fa-exclamation-circle','#e63946');return}var ac=fd.get('accentColor')||'#2ecc71',op=fd.get('originalPrice');products.push({id:nextId++,name:name,category:cat,price:parseInt(price),originalPrice:op?parseInt(op):null,badge:fd.get('badge')?.trim()||'NEW',badgeBg:ac,accentColor:ac,rating:0,reviews:0,stock:parseInt(stock),desc:fd.get('desc').trim(),nutrition:fd.get('nutrition')?.trim()||null,img:img});saveData();toast('"'+name+'" berhasil ditambahkan!','fa-check-circle','#2ecc71');go('products')})}
 
-/* ===================== TAMBAH PRODUK ===================== */
-function pageAddProduct(){
-  return '<div class="max-w-2xl mx-auto bg-card border border-border rounded-2xl p-6">'+
-    '<h3 class="font-heading text-xl text-white mb-6"><i class="fas fa-plus-circle text-accent mr-2"></i>FORMULIR PRODUK BARU</h3>'+
-    '<form id="addForm" class="space-y-4">'+
-      '<div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Nama Produk *</label><input type="text" name="name" class="form-input" placeholder="Contoh: EVOWHEY 30s" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Kategori *</label><select name="category" class="form-input" required><option value="">Pilih kategori</option><option value="protein">Protein</option><option value="mass">Mass Gainer</option><option value="creatine">Creatine</option><option value="preworkout">Pre-Workout</option><option value="aksesoris">Aksesoris</option></select></div></div>'+
-      '<div class="grid sm:grid-cols-3 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Harga *</label><input type="number" name="price" class="form-input" placeholder="1000" min="1" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Harga Asli</label><input type="number" name="originalPrice" class="form-input" placeholder="1200 (opsional)" min="0"></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Stok *</label><input type="number" name="stock" class="form-input" placeholder="50" min="0" required></div></div>'+
-      '<div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Badge Label</label><input type="text" name="badge" class="form-input" placeholder="BEST, NEW, -20%"></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Warna Aksen</label><div class="flex gap-2 mt-1">'+
-        ['#e63946','#f4a261','#2ecc71','#3498db','#9b59b6'].map(function(c,i){return '<label class="cursor-pointer"><input type="radio" name="accentColor" value="'+c+'" '+(i===0?'checked':'')+' class="hidden peer"><span class="w-8 h-8 rounded-lg border-2 border-transparent peer-checked:border-white block transition" style="background:'+c+'"></span></label>'}).join('')+
-      '</div></div></div>'+
-      '<div><label class="text-xs text-muted block mb-1.5 font-semibold">URL Gambar *</label><input type="url" name="img" class="form-input" placeholder="https://images.unsplash.com/..." required></div>'+
-      '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Deskripsi *</label><textarea name="desc" class="form-input" rows="3" placeholder="Jelaskan produk..." required></textarea></div>'+
-      '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Info Nutrisi</label><input type="text" name="nutrition" class="form-input" placeholder="25g Protein | 5g BCAA (opsional)"></div>'+
-      '<div style="display:flex;gap:12px;padding-top:8px"><button type="submit" class="btn btn-primary" style="flex:1;padding:12px"><i class="fas fa-plus-circle"></i> Tambah Produk</button><button type="reset" class="btn btn-surface" style="padding:12px 24px">Reset</button></div>'+
-    '</form></div>';
-}
-function bindAddForm(){
-  var f=document.getElementById('addForm');if(!f)return;
-  f.addEventListener('submit',function(e){
-    e.preventDefault();var fd=new FormData(f);
-    var name=fd.get('name').trim(),category=fd.get('category'),price=fd.get('price'),stock=fd.get('stock'),img=fd.get('img').trim();
-    if(!name||!category||!price||!stock||!img){toast('Lengkapi field wajib!','fa-exclamation-circle','#e63946');return}
-    var ac=fd.get('accentColor')||'#2ecc71',opVal=fd.get('originalPrice');
-    products.push({id:nextId++,name:name,category:category,price:parseInt(price),originalPrice:opVal?parseInt(opVal):null,badge:fd.get('badge')?.trim()||'NEW',badgeBg:ac,accentColor:ac,rating:0,reviews:0,stock:parseInt(stock),desc:fd.get('desc').trim(),nutrition:fd.get('nutrition')?.trim()||null,img:img});
-    toast('"'+name+'" berhasil ditambahkan!','fa-check-circle','#2ecc71');go('products');
-  });
-}
+/* ===== KELOLA AKUN ===== */
+function pageManageAccounts(){var url=getShopUrl(),ls='';if(isSrcdoc())ls='<div class="mt-5 p-4 bg-surface rounded-xl"><p class="text-xs text-muted"><i class="fas fa-info-circle text-gold mr-1"></i> Link toko hanya tersedia saat dibuka langsung di browser.</p></div>';else ls='<div class="mt-5 p-4 bg-surface rounded-xl"><p class="text-xs text-muted mb-2"><i class="fas fa-link text-accent mr-1"></i> Link Toko Publik:</p><div class="flex items-center gap-2"><input type="text" value="'+url+'" readonly class="form-input text-xs flex-1" id="dashShopLink"><button type="button" id="btnCopyDash" class="btn btn-primary" style="padding:8px 14px;flex-shrink:0"><i class="fas fa-copy"></i> Salin</button></div></div>';return '<div class="bg-card border border-border rounded-2xl p-5"><div class="flex items-center justify-between mb-6"><h3 class="font-heading text-lg text-white tracking-wide"><i class="fas fa-users-cog text-accent mr-2"></i>DAFTAR AKUN</h3><div style="display:flex;gap:8px"><button type="button" id="btnShowAddAcc" class="btn btn-primary" style="padding:8px 16px"><i class="fas fa-user-plus"></i> Tambah</button><button type="button" id="btnResetData" class="btn btn-ghost" style="padding:8px 16px;color:#f4a261;border-color:rgba(244,162,97,.3)"><i class="fas fa-undo"></i> Reset Data</button></div></div><div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Akun</th><th>Username</th><th>Role</th><th>Password</th><th>Aksi</th></tr></thead><tbody>'+accounts.map(function(a){return '<tr><td><div class="flex items-center gap-3"><img src="'+a.avatar+'" class="w-9 h-9 rounded-full object-cover" alt="'+a.name+'"><div><p class="text-sm font-semibold text-txt">'+a.name+'</p><p class="text-[10px] text-muted">'+a.email+'</p></div></div></td><td><code class="text-xs bg-surface px-2 py-1 rounded text-accent">'+a.user+'</code></td><td><span class="role-tag role-'+a.role+'">'+a.role+'</span></td><td><code class="text-xs bg-surface px-2 py-1 rounded text-muted">'+a.pass+'</code></td><td>'+(a.id===1?'<span class="text-xs text-muted">Utama</span>':'<button type="button" data-delacc="'+a.id+'" class="btn btn-ghost" style="padding:5px 10px;font-size:11px;color:#e63946;border-color:rgba(230,57,70,.3)"><i class="fas fa-trash"></i></button>')+'</td></tr>'}).join('')+'</tbody></table></div>'+ls+'</div>'}
+function showAddAccount(){openModal('<div class="p-6"><h3 class="font-heading text-xl text-white mb-5"><i class="fas fa-user-plus text-accent mr-2"></i>TAMBAH AKUN BARU</h3><form id="addAccForm" class="space-y-4"><div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Nama Lengkap *</label><input type="text" id="aaName" class="form-input" placeholder="Nama" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Email *</label><input type="email" id="aaEmail" class="form-input" placeholder="email@mail.com" required></div></div><div class="grid sm:grid-cols-3 gap-4"><div><label class="text-xs text-muted block mb-1.5 font-semibold">Username *</label><input type="text" id="aaUser" class="form-input" placeholder="username" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Password *</label><input type="text" id="aaPass" class="form-input" placeholder="password" required></div><div><label class="text-xs text-muted block mb-1.5 font-semibold">Role *</label><select id="aaRole" class="form-input" required><option value="customer">Customer</option><option value="staff">Staff</option><option value="admin">Admin</option></select></div></div><div style="display:flex;gap:12px;padding-top:8px"><button type="submit" class="btn btn-primary" style="flex:1;padding:12px"><i class="fas fa-save"></i> Simpan</button><button type="button" id="btnCancelAddAcc" class="btn btn-surface" style="padding:12px 24px">Batal</button></div></form></div>');document.getElementById('btnCancelAddAcc').onclick=function(){closeModal()};document.getElementById('addAccForm').addEventListener('submit',function(ev){ev.preventDefault();var name=document.getElementById('aaName').value.trim(),email=document.getElementById('aaEmail').value.trim(),user=document.getElementById('aaUser').value.trim().toLowerCase(),pass=document.getElementById('aaPass').value,role=document.getElementById('aaRole').value;if(!name||!email||!user||!pass){toast('Lengkapi semua field!','fa-exclamation-circle','#e63946');return}var dup=false;for(var i=0;i<accounts.length;i++){if(accounts[i].user===user){dup=true;break}}if(dup){toast('Username "'+user+'" sudah digunakan!','fa-exclamation-circle','#e63946');return}var colors={admin:{bg:'rgba(230,57,70,.2)',c:'#e63946'},staff:{bg:'rgba(52,152,219,.2)',c:'#3498db'},customer:{bg:'rgba(46,204,113,.2)',c:'#2ecc71'}},avatars=['https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face','https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face','https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face'];accounts.push({id:Date.now(),user:user,pass:pass,name:name,email:email,role:role,avatar:avatars[accounts.length%avatars.length],avatarBg:colors[role].bg,avatarColor:colors[role].c});saveData();closeModal();toast('Akun "'+name+'" berhasil ditambahkan!','fa-check-circle','#2ecc71');render()})}
+function deleteAccount(id){if(id===1){toast('Akun utama tidak bisa dihapus!','fa-exclamation-circle','#e63946');return}var a=null;for(var i=0;i<accounts.length;i++){if(accounts[i].id===id){a=accounts[i];break}}if(!a)return;openModal('<div class="p-6 text-center"><div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center"><i class="fas fa-user-times text-accent text-2xl"></i></div><h3 class="font-heading text-2xl text-white mb-2">HAPUS AKUN?</h3><p class="text-muted text-sm mb-6">Yakin hapus akun <strong class="text-white">'+a.name+'</strong>?</p><div style="display:flex;gap:12px;justify-content:center"><button type="button" id="btnCancelDelAcc" class="btn btn-surface" style="padding:10px 24px">Batal</button><button type="button" id="btnConfirmDelAcc" class="btn btn-primary" style="padding:10px 24px"><i class="fas fa-trash"></i> Hapus</button></div></div>');document.getElementById('btnCancelDelAcc').onclick=function(){closeModal()};document.getElementById('btnConfirmDelAcc').onclick=function(){accounts=accounts.filter(function(x){return x.id!==id});saveData();closeModal();toast('Akun "'+a.name+'" berhasil dihapus','fa-trash','#e63946');render()}}
 
-/* ===================== KELOLA AKUN ===================== */
-function pageManageAccounts(){
-  var url=getShopUrl();
-  var linkSection='';
-  if(isSrcdoc()){
-    linkSection='<div class="mt-5 p-4 bg-surface rounded-xl">'+
-      '<p class="text-xs text-muted"><i class="fas fa-info-circle text-gold mr-1"></i> Link toko publik hanya tersedia saat dibuka langsung di browser (bukan di preview iframe).</p>'+
-    '</div>';
-  }else{
-    linkSection='<div class="mt-5 p-4 bg-surface rounded-xl">'+
-      '<p class="text-xs text-muted mb-2"><i class="fas fa-link text-accent mr-1"></i> Link Toko Publik (bagikan ke customer):</p>'+
-      '<div class="flex items-center gap-2">'+
-        '<input type="text" value="'+url+'" readonly class="form-input text-xs flex-1" id="dashShopLink">'+
-        '<button type="button" id="btnCopyDash" class="btn btn-primary" style="padding:8px 14px;flex-shrink:0"><i class="fas fa-copy"></i> Salin</button>'+
-      '</div></div>';
-  }
-  return '<div class="bg-card border border-border rounded-2xl p-5">'+
-    '<div class="flex items-center justify-between mb-6">'+
-      '<h3 class="font-heading text-lg text-white tracking-wide"><i class="fas fa-users-cog text-accent mr-2"></i>DAFTAR AKUN</h3>'+
-      '<button type="button" id="btnShowAddAcc" class="btn btn-primary" style="padding:8px 16px"><i class="fas fa-user-plus"></i> Tambah Akun</button>'+
-    '</div>'+
-    '<div class="overflow-x-auto"><table class="data-table">'+
-      '<thead><tr><th>Akun</th><th>Username</th><th>Role</th><th>Password</th><th>Aksi</th></tr></thead>'+
-      '<tbody>'+accounts.map(function(a){return '<tr>'+
-        '<td><div class="flex items-center gap-3"><img src="'+a.avatar+'" class="w-9 h-9 rounded-full object-cover" alt="'+a.name+'"><div><p class="text-sm font-semibold text-txt">'+a.name+'</p><p class="text-[10px] text-muted">'+a.email+'</p></div></div></td>'+
-        '<td><code class="text-xs bg-surface px-2 py-1 rounded text-accent">'+a.user+'</code></td>'+
-        '<td><span class="role-tag role-'+a.role+'">'+a.role+'</span></td>'+
-        '<td><code class="text-xs bg-surface px-2 py-1 rounded text-muted">'+a.pass+'</code></td>'+
-        '<td>'+(a.id===1?'<span class="text-xs text-muted">Utama</span>':'<button type="button" data-delacc="'+a.id+'" class="btn btn-ghost" style="padding:5px 10px;font-size:11px;color:#e63946;border-color:rgba(230,57,70,.3)"><i class="fas fa-trash"></i></button>')+'</td>'+
-      '</tr>'}).join('')+'</tbody></table></div>'+
-    linkSection+'</div>';
-}
+/* ===== AKUN SAYA ===== */
+function pageMyAccount(){var u=currentUser;return '<div class="max-w-lg mx-auto bg-card border border-border rounded-2xl p-6"><div class="text-center mb-6"><img src="'+(u.avatar||'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120&h=120&fit=crop&crop=face')+'" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-accent/30" alt="'+u.name+'"><h3 class="font-heading text-2xl text-white">'+u.name+'</h3><span class="role-tag role-'+u.role+'">'+u.role+'</span></div><div class="space-y-3"><div class="flex items-center gap-3 bg-surface rounded-xl p-3"><i class="fas fa-envelope text-accent text-sm w-5 text-center"></i><div><p class="text-[10px] text-muted">Email</p><p class="text-sm text-txt">'+(u.email||'-')+'</p></div></div><div class="flex items-center gap-3 bg-surface rounded-xl p-3"><i class="fas fa-user text-accent text-sm w-5 text-center"></i><div><p class="text-[10px] text-muted">Username</p><p class="text-sm text-txt">'+u.user+'</p></div></div><div class="flex items-center gap-3 bg-surface rounded-xl p-3"><i class="fas fa-lock text-accent text-sm w-5 text-center"></i><div><p class="text-[10px] text-muted">Password</p><p class="text-sm text-txt">'+u.pass+'</p></div></div></div><button type="button" id="btnLogoutFromProfile" class="btn btn-primary" style="width:100%;padding:13px;margin-top:24px"><i class="fas fa-sign-out-alt"></i> Keluar</button></div>'}
 
-function showAddAccount(){
-  openModal('<div class="p-6">'+
-    '<h3 class="font-heading text-xl text-white mb-5"><i class="fas fa-user-plus text-accent mr-2"></i>TAMBAH AKUN BARU</h3>'+
-    '<form id="addAccForm" class="space-y-4">'+
-      '<div class="grid sm:grid-cols-2 gap-4">'+
-        '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Nama Lengkap *</label><input type="text" id="aaName" class="form-input" placeholder="Nama" required></div>'+
-        '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Email *</label><input type="email" id="aaEmail" class="form-input" placeholder="email@mail.com" required></div></div>'+
-      '<div class="grid sm:grid-cols-3 gap-4">'+
-        '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Username *</label><input type="text" id="aaUser" class="form-input" placeholder="username" required></div>'+
-        '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Password *</label><input type="text" id="aaPass" class="form-input" placeholder="password" required></div>'+
-        '<div><label class="text-xs text-muted block mb-1.5 font-semibold">Role *</label><select id="aaRole" class="form-input" required><option value="customer">Customer</option><option value="staff">Staff</option><option value="admin">Admin</option></select></div></div>'+
-      '<div style="display:flex;gap:12px;padding-top:8px">'+
-        '<button type="submit" class="btn btn-primary" style="flex:1;padding:12px"><i class="fas fa-save"></i> Simpan</button>'+
-        '<button type="button" id="btnCancelAddAcc" class="btn btn-surface" style="padding:12px 24px">Batal</button></div>'+
-    '</form></div>');
-  document.getElementById('btnCancelAddAcc').onclick=function(){closeModal()};
-  document.getElementById('addAccForm').addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var name=document.getElementById('aaName').value.trim();
-    var email=document.getElementById('aaEmail').value.trim();
-    var user=document.getElementById('aaUser').value.trim().toLowerCase();
-    var pass=document.getElementById('aaPass').value;
-    var role=document.getElementById('aaRole').value;
-    if(!name||!email||!user||!pass){toast('Lengkapi semua field!','fa-exclamation-circle','#e63946');return}
-    var dup=false;for(var i=0;i<accounts.length;i++){if(accounts[i].user===user){dup=true;break}}
-    if(dup){toast('Username "'+user+'" sudah digunakan!','fa-exclamation-circle','#e63946');return}
-    var colors={admin:{bg:'rgba(230,57,70,.2)',c:'#e63946'},staff:{bg:'rgba(52,152,219,.2)',c:'#3498db'},customer:{bg:'rgba(46,204,113,.2)',c:'#2ecc71'}};
-    var avatars=['https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face','https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face','https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face'];
-    accounts.push({id:Date.now(),user:user,pass:pass,name:name,email:email,role:role,avatar:avatars[accounts.length%avatars.length],avatarBg:colors[role].bg,avatarColor:colors[role].c});
-    closeModal();toast('Akun "'+name+'" berhasil ditambahkan!','fa-check-circle','#2ecc71');render();
-  });
-}
-
-function deleteAccount(id){
-  if(id===1){toast('Akun utama tidak bisa dihapus!','fa-exclamation-circle','#e63946');return}
-  var a=null;for(var i=0;i<accounts.length;i++){if(accounts[i].id===id){a=accounts[i];break}}
-  if(!a)return;
-  openModal('<div class="p-6 text-center">'+
-    '<div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center"><i class="fas fa-user-times text-accent text-2xl"></i></div>'+
-    '<h3 class="font-heading text-2xl text-white mb-2">HAPUS AKUN?</h3>'+
-    '<p class="text-muted text-sm mb-6">Yakin hapus akun <strong class="text-white">'+a.name+'</strong>?</p>'+
-    '<div style="display:flex;gap:12px;justify-content:center">'+
-      '<button type="button" id="btnCancelDelAcc" class="btn btn-surface" style="padding:10px 24px">Batal</button>'+
-      '<button type="button" id="btnConfirmDelAcc" class="btn btn-primary" style="padding:10px 24px"><i class="fas fa-trash"></i> Hapus</button></div></div>');
-  document.getElementById('btnCancelDelAcc').onclick=function(){closeModal()};
-  document.getElementById('btnConfirmDelAcc').onclick=function(){
-    accounts=accounts.filter(function(x){return x.id!==id});
-    closeModal();toast('Akun "'+a.name+'" berhasil dihapus','fa-trash','#e63946');render();
-  };
-}
-
-/* ===================== AKUN SAYA ===================== */
-function pageMyAccount(){
-  var u=currentUser;
-  return '<div class="max-w-lg mx-auto bg-card border border-border rounded-2xl p-6">'+
-    '<div class="text-center mb-6">'+
-      '<img src="'+(u.avatar||'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120&h=120&fit=crop&crop=face')+'" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-accent/30" alt="'+u.name+'">'+
-      '<h3 class="font-heading text-2xl text-white">'+u.name+'</h3>'+
-      '<span class="role-tag role-'+u.role+'">'+u.role+'</span></div>'+
-    '<div class="space-y-3">'+
-      '<div class="flex items-center gap-3 bg-surface rounded-xl p-3"><i class="fas fa-envelope text-accent text-sm w-5 text-center"></i><div><p class="text-[10px] text-muted">Email</p><p class="text-sm text-txt">'+(u.email||'-')+'</p></div></div>'+
-      '<div class="flex items-center gap-3 bg-surface rounded-xl p-3"><i class="fas fa-user text-accent text-sm w-5 text-center"></i><div><p class="text-[10px] text-muted">Username</p><p class="text-sm text-txt">'+u.user+'</p></div></div>'+
-      '<div class="flex items-center gap-3 bg-surface rounded-xl p-3"><i class="fas fa-lock text-accent text-sm w-5 text-center"></i><div><p class="text-[10px] text-muted">Password</p><p class="text-sm text-txt">'+u.pass+'</p></div></div></div>'+
-    '<button type="button" id="btnLogoutFromProfile" class="btn btn-primary" style="width:100%;padding:13px;margin-top:24px"><i class="fas fa-sign-out-alt"></i> Keluar</button></div>';
-}
-
-/* ===================== TOKO PUBLIK ===================== */
+/* ===== TOKO PUBLIK ===== */
 function renderShop(){renderShopContent()}
-function goShopPage(sub){shopSubPage=sub;renderShopContent()}
-function renderShopContent(){
-  var el=document.getElementById('shopContent');
-  if(shopSubPage==='products')el.innerHTML=shopProductsHTML();
-  else if(shopSubPage==='shopCart')el.innerHTML=cartHTML("goShopPage('products')");
-  updateBadges();
-}
-function shopProductsHTML(){
-  var list=getFilteredList('shopSearch');
-  return '<div class="shop-hero px-4 md:px-8 py-12 text-center"><h2 class="font-heading text-4xl md:text-5xl text-white tracking-wider mb-3">EVOFIT SUPPLEMENTS</h2><p class="text-muted text-sm max-w-md mx-auto">Suplemen fitness premium untuk mendukung perjalanan fitness kamu.</p></div>'+
-    '<div class="px-4 md:px-8 py-6">'+filterBtnsHTML(shopFilter)+
-    (!list.length?'<div class="text-center py-16 text-muted"><i class="fas fa-search text-3xl mb-3 block opacity-30"></i>Tidak ada produk ditemukan</div>':
-    '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">'+list.map(function(p){return productCardHTML(p,false)}).join('')+'</div>')+'</div>'+
-    '<footer class="border-t border-border px-4 md:px-8 py-8 mt-8 text-center"><span class="font-heading text-lg text-white tracking-wider">EVOFIT</span><p class="text-muted text-xs mt-1">Supplement Store &copy; 2025</p></footer>';
-}
+function goShopPage(sub){shopSubPage=sub;renderShopContent();saveSession()}
+function renderShopContent(){var el=document.getElementById('shopContent');if(shopSubPage==='products')el.innerHTML=shopProductsHTML();else if(shopSubPage==='shopCart')el.innerHTML=cartHTML("goShopPage('products')");updateBadges()}
+function shopProductsHTML(){var list=getFilteredList('shopSearch');return '<div class="shop-hero px-4 md:px-8 py-12 text-center"><h2 class="font-heading text-4xl md:text-5xl text-white tracking-wider mb-3">EVOFIT SUPPLEMENTS</h2><p class="text-muted text-sm max-w-md mx-auto">Suplemen fitness premium untuk mendukung perjalanan fitness kamu.</p></div><div class="px-4 md:px-8 py-6">'+filterBtnsHTML(shopFilter)+(!list.length?'<div class="text-center py-16 text-muted"><i class="fas fa-search text-3xl mb-3 block opacity-30"></i>Tidak ada produk ditemukan</div>':'<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">'+list.map(function(p){return productCardHTML(p,false)}).join('')+'</div>')+'</div><footer class="border-t border-border px-4 md:px-8 py-8 mt-8 text-center"><span class="font-heading text-lg text-white tracking-wider">EVOFIT</span><p class="text-muted text-xs mt-1">Supplement Store &copy; 2025</p></footer>'}
 function renderShopProducts(){var el=document.getElementById('shopContent');if(el&&shopSubPage==='products')el.innerHTML=shopProductsHTML()}
 
-/* ===================== INIT ===================== */
-renderLinkBox('linkBoxLogin',true);
-checkHash();
-if(window.location.hash==='#shop'&&!isSrcdoc())enterAsGuest();
+/* ================================================================
+   INIT: RESTORE SESSION ATAU TAMPILKAN LOGIN
+   ================================================================ */
+(function init(){
+  /* Coba restore session dari localStorage */
+  var session=loadSession();
+
+  if(session&&session.userId){
+    /* Cari user yang masih ada di accounts */
+    var user=null;
+    for(var i=0;i<accounts.length;i++){
+      if(accounts[i].id===session.userId){user=accounts[i];break}
+    }
+
+    if(user){
+      /* Session valid — langsung masuk tanpa login */
+      currentUser=user;
+      if(session.pFilter)pFilter=session.pFilter;
+      if(session.pSort)pSort=session.pSort;
+      if(session.shopSubPage)shopSubPage=session.shopSubPage;
+      if(session.shopFilter)shopFilter=session.shopFilter;
+
+      document.getElementById('loginPage').style.display='none';
+      document.getElementById('shopPage').style.display='none';
+      document.getElementById('dashboardPage').style.display='block';
+      buildSidebar();
+
+      /* Navigate ke halaman yang tersimpan */
+      var targetPage=session.page||'dashboard';
+      if(user.role==='customer'&&targetPage==='dashboard')targetPage='products';
+      currentPage='_init_'; /* bypass go() dari init */
+      go(targetPage);
+      return; /* SELESAI — tidak perlu ke login */
+    }
+    /* User sudah dihapus, fall through ke login */
+    clearSession();
+  }
+
+  /* Tidak ada session — tampilkan login */
+  renderLinkBox('linkBoxLogin',true);
+  checkHash();
+  if(window.location.hash==='#shop'&&!isSrcdoc())enterAsGuest();
+})();
 </script>
 </body>
 </html>
